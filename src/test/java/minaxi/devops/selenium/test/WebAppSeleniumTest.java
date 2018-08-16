@@ -30,11 +30,11 @@ public class WebAppSeleniumTest {
 		DesiredCapabilities capability = DesiredCapabilities.chrome();
     	capability.setBrowserName("chrome");
     	capability.setPlatform(Platform.LINUX);
-    	WebDriver driver = new RemoteWebDriver(new URL("http://192.168.0.101:4444/wd/hub"), capability);
-		driver.get("http://192.168.0.101:8085/CounterWebApp/");
+    	WebDriver driver = new RemoteWebDriver(new URL("http://ec2-52-15-179-233.us-east-2.compute.amazonaws.com:4444/wd/hub"), capability);
+		driver.get("http://ec2-52-15-179-233.us-east-2.compute.amazonaws.com:8081/CounterWebApp");
     	WebElement body = driver.findElement(By.tagName("h1"));
     	String header = body.getText();
-    	if(!header.startsWith("Minaxi"))
+    	if(!header.startsWith("Soumya"))
     	{
     		System.out.println("Chrome Test Case Failed !!!!");
     		System.out.println("Header text is "+ header);
@@ -58,11 +58,11 @@ public class WebAppSeleniumTest {
     	DesiredCapabilities capability = DesiredCapabilities.firefox();
     	capability.setBrowserName("firefox");
     	capability.setPlatform(Platform.LINUX);
-    	WebDriver driver = new RemoteWebDriver(new URL("http://192.168.0.101:4444/wd/hub"), capability);
-    	driver.get("http://192.168.0.101:8085/CounterWebApp/");
+    	WebDriver driver = new RemoteWebDriver(new URL("http://ec2-52-15-179-233.us-east-2.compute.amazonaws.com:4444/wd/hub"), capability);
+    	driver.get("http://ec2-52-15-179-233.us-east-2.compute.amazonaws.com:8081/CounterWebApp");
     	WebElement body = driver.findElement(By.tagName("h1"));
     	String header = body.getText();
-    	if(!header.startsWith("Minaxi"))
+    	if(!header.startsWith("Soumya"))
     	{
     		System.out.println("Firefox Test Case Failed !!!!");
     		System.out.println("Header text is "+ header);
